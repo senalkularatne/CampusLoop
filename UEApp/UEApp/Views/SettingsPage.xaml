@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:UEApp;assembly=UEApp"
+            x:Class="UEApp.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="7.5" Margin="15">
+            <Button Text="User Settings" FontSize="18" HorizontalOptions="StartAndExpand"
+                    Clicked="User_Button_Clicked" BorderColor="Transparent" BackgroundColor="Transparent"/>
+            <BoxView Color="Black" HeightRequest="1" Opacity="0.02"/>
+            <Button Text="Notifications" FontSize="18" HorizontalOptions="StartAndExpand"
+                    Clicked="Notif_Button_Clicked" BorderColor="Transparent" BackgroundColor="Transparent"/>
+            <BoxView Color="Black" HeightRequest="1" Opacity="0.02"/>
+            <StackLayout Orientation="Horizontal" Padding="13,13">
+                <Label Text="Location" FontSize="18" HorizontalOptions="StartAndExpand" TextColor="{StaticResource PrimaryTextColor}"/>
+                <Switch IsToggled="True" Toggled="Location_Switch_Toggled" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <BoxView Color="Black" HeightRequest="1" Opacity="0.02"/>
+            <Button Text="User Manual" FontSize="18" HorizontalOptions="StartAndExpand"
+                    Clicked="Manual_Button_Clicked" BorderColor="Transparent" BackgroundColor="Transparent"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

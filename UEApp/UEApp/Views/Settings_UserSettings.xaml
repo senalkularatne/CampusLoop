@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:UEApp;assembly=UEApp"
+            x:Class="UEApp.Settings_UserSettings">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="7.5" Margin="15">
+            <Button Text="Change Email" FontSize="18" HorizontalOptions="StartAndExpand"
+                    Clicked="Email_Button_Clicked" BorderColor="Transparent" BackgroundColor="Transparent"/>
+            <BoxView Color="Black" HeightRequest="1" Opacity="0.02"/>
+            <Button Text="Change Password" FontSize="18" HorizontalOptions="StartAndExpand"
+                    Clicked="Password_Button_Clicked" BorderColor="Transparent" BackgroundColor="Transparent"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

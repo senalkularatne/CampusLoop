@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:UEApp;assembly=UEApp"
+            x:Class="UEApp.EventView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" >
+                <StackLayout>
+                    <Image x:Name="banner" Source="http://www.min.uc.edu/ucsc/img/uc-logo-400w-ss.png/image" 
+                        VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="120"  />
+                </StackLayout>
+                <StackLayout Spacing="15" Padding="15,0">
+                    <Label Text="Cool Guy Meetup" FontSize="24" HorizontalOptions="Center" TextColor="{StaticResource PrimaryTextColor}"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="Attend_Button" Text="Attending?" FontSize="Medium" BorderWidth="1" BorderColor="#F44336"
+                                BackgroundColor="Transparent" TextColor="{StaticResource PrimaryTextColor}"
+                                HorizontalOptions="StartAndExpand" Clicked="Attend_Button_Clicked"/>
+                        <Picker x:Name="pickle" Title="Attending?" HorizontalOptions="StartAndExpand"
+                                SelectedIndexChanged="pickle_SelectedIndexChanged" IsVisible="False" IsEnabled="False"/>
+                        <Label x:Name="Attenders_Label" Text="17 Going" FontSize="Medium" VerticalOptions="Center"
+                                TextColor="{StaticResource PrimaryTextColor}" HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                    <BoxView Color="Black" HeightRequest="1" Opacity="0.02"/>
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Saturday, March 23" HorizontalOptions="StartAndExpand" FontSize="Medium" TextColor="{StaticResource PrimaryTextColor}"/>
+                        <Label Text="1:00 PM" HorizontalOptions="EndAndExpand" FontSize="Medium" TextColor="{StaticResource PrimaryTextColor}"/>
+                    </StackLayout>
+                    <BoxView Color="Black" HeightRequest="1" Opacity="0.02"/>
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Kool Lounge" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="{StaticResource PrimaryTextColor}"/>
+                        <Label Text="8750 Lane Dr. Cincinnati Ohio" FontSize="Medium" TextColor="{StaticResource PrimaryTextColor}"/>
+                    </StackLayout>
+                    <BoxView Color="Black" HeightRequest="1" Opacity="0.02"/>
+                    <Label Text="We can dance if we want to. We can leave your friends behind. 'Cause your friends don't dance. And if they don't dance. Well, they're no friends of mine."
+                       HorizontalOptions="Center" FontSize="Medium" TextColor="{StaticResource PrimaryTextColor}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

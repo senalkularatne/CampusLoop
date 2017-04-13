@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:UEApp;assembly=UEApp"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="UEApp.UserSettings_Email_Popup">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Fill" BackgroundColor="White" Padding="20, 20, 20, 20">
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <StackLayout x:Name="Warn_Layout" IsVisible="False"></StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Entry x:Name="CurEmail" Placeholder="Current email address" TextChanged="CurEmail_TextChanged"
+                           TextColor="{StaticResource PrimaryTextColor}" Keyboard="Email" HorizontalOptions="StartAndExpand"/>
+                    <AbsoluteLayout >
+                        <Image x:Name="CurEmail_Check" Source="ic_check_green_36dp.png" IsVisible="False" HorizontalOptions="EndAndExpand"/>
+                        <Image x:Name="CurEmail_X" Source="ic_close_red_36dp.png" IsVisible="False" HorizontalOptions="EndAndExpand"/>
+                    </AbsoluteLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Entry x:Name="NewEmail" Placeholder="New email address" TextChanged="NewEmail_TextChanged"
+                           TextColor="{StaticResource PrimaryTextColor}" Keyboard="Email" HorizontalOptions="StartAndExpand"/>
+                    <AbsoluteLayout >
+                        <Image x:Name="NewEmail_Check" Source="ic_check_green_36dp.png" IsVisible="False" HorizontalOptions="EndAndExpand"/>
+                        <Image x:Name="NewEmail_X" Source="ic_close_red_36dp.png" IsVisible="False" HorizontalOptions="EndAndExpand"/>
+                    </AbsoluteLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Entry x:Name="ReNewEmail" Placeholder="Confirm new email address" TextChanged="ReNewEmail_TextChanged"
+                           TextColor="{StaticResource PrimaryTextColor}" Keyboard="Email" HorizontalOptions="StartAndExpand"/>
+                    <AbsoluteLayout >
+                        <Image x:Name="ReNewEmail_Check" Source="ic_check_green_36dp.png" IsVisible="False" HorizontalOptions="EndAndExpand"/>
+                        <Image x:Name="ReNewEmail_X" Source="ic_close_red_36dp.png" IsVisible="False" HorizontalOptions="EndAndExpand"/>
+                    </AbsoluteLayout>
+                </StackLayout>
+                <Label x:Name="Advise_Label" Text="Email must be a University of Cincinnati address" IsVisible="False"
+                       TextColor="{StaticResource SecondaryTextColor}" HorizontalOptions="CenterAndExpand" />
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Button Text="Cancel" FontSize="18" HorizontalOptions="StartAndExpand"
+                            Clicked="OnCancel" BorderWidth="1" BorderColor="#F44336" BackgroundColor="Transparent"/>
+                    <Button Text="Submit" FontSize="18" HorizontalOptions="EndAndExpand"
+                            Clicked="OnSubmit" BorderWidth="1" BorderColor="#F44336" BackgroundColor="Transparent"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</pages:PopupPage>

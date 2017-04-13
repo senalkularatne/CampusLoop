@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:UEApp;assembly=UEApp"
+             xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+             x:Class="UEApp.HomePage_Events">
+    <!-- Data for this page is supplied by EventsDataModel.cs -->
+    <!-- OnSelection might be messing up AltCellColors sometimes, needs testing-->
+    <!-- TODO: Make tags clickable? -->
+    <ContentPage.Content>
+        <RelativeLayout>
+            <ContentView RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+				         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                <ListView x:Name="list" RowHeight="100" HasUnevenRows="True" ItemSelected="OnItemSelected"
+                          AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Appearing="Alt_Cell_Colors">
+                                <StackLayout x:Name="stack" Orientation="Horizontal" Padding="5,5,15,5">
+                                    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="15,5,5,5">
+                                        <Label Text="{Binding Title}" FontSize="Medium" TextColor="{StaticResource PrimaryTextColor}"/>
+                                        <Label Text="{Binding Location}" FontSize="Small" TextColor="{StaticResource SecondaryTextColor}"/>
+                                        <Label Text="{Binding Date}" FontSize="Small" TextColor="{StaticResource SecondaryTextColor}"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Tag1}" FontSize="Micro" TextColor="{StaticResource SecondaryTextColor}"/>
+                                            <Label Text="{Binding Tag2}" FontSize="Micro" TextColor="{StaticResource SecondaryTextColor}"/>
+                                            <Label Text="{Binding Tag3}" FontSize="Micro" TextColor="{StaticResource SecondaryTextColor}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <Image Source="{Binding Location_PhotoUrl}" HorizontalOptions="EndAndExpand" WidthRequest="80" HeightRequest="80"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ContentView>
+            <fab:FloatingActionButton
+				    x:Name="fabButton" Source="ic_add_white_24dp.png" Size="Normal" Clicked="Handle_FabClicked"
+                    NormalColor="#F44336" RippleColor="#D32F2F"
+				    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-75}"
+				    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-75}" />
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

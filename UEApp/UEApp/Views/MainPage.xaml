@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:UEApp;assembly=UEApp"
+            x:Class="UEApp.MainPage">
+    <!-- To add more tabs, add more pages here -->
+    <NavigationPage Title="Feed">
+        <x:Arguments>
+            <local:HomePage_Events Title="Home"/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Upcoming">
+        <x:Arguments>
+            <local:HomePage_Groups Title="Home"/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Recommended">
+        <x:Arguments>
+            <local:HomePage_Groups Title="Home"/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Categories">
+        <x:Arguments>
+            <local:HomePage_Groups Title="Home"/>
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

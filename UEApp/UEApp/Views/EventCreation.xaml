@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:UEApp;assembly=UEApp"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="UEApp.EventCreation">
+  <StackLayout VerticalOptions="Center" HorizontalOptions="Fill" BackgroundColor="White" Padding="20,20,20,20">
+    <ScrollView>
+      <StackLayout Orientation="Vertical" Spacing="15">
+        <StackLayout x:Name="Warn_Layout" IsVisible="False"></StackLayout>
+        <Entry x:Name="Event_Title" Placeholder="Title" Keyboard="Text" TextColor="{StaticResource PrimaryTextColor}"/>
+        <Entry x:Name="Event_Place" Placeholder="Place" Keyboard="Text" TextColor="{StaticResource PrimaryTextColor}"/>
+        <StackLayout Orientation="Horizontal">
+          <TimePicker x:Name="timepickle" HorizontalOptions="StartAndExpand"/>
+          <DatePicker x:Name="datepickle" Date="{x:Static sys:DateTime.Now}" MinimumDate="{x:Static sys:DateTime.Now}" HorizontalOptions="EndAndExpand">
+            <DatePicker.Format>M/d/yyyy</DatePicker.Format>
+            <DatePicker.MaximumDate>
+              <sys:DateTime x:FactoryMethod="Parse">
+                <x:Arguments>
+                  <x:String>Dec 31 2020</x:String>
+                </x:Arguments>
+              </sys:DateTime>
+            </DatePicker.MaximumDate>
+          </DatePicker>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Picker x:Name="pickle0" Title="Tag #1" ItemsSource="{Binding Categories}" HorizontalOptions="StartAndExpand"
+                  SelectedIndex="0" SelectedIndexChanged="CategoryPicked"/>
+          <Picker x:Name="pickle1" Title="Tag #2" ItemsSource="{Binding Categories}" HorizontalOptions="CenterAndExpand"
+                  SelectedIndex="1" IsVisible="False"  SelectedIndexChanged="CategoryPicked"/>
+          <Picker x:Name="pickle2" Title="Tag #3" ItemsSource="{Binding Categories}" HorizontalOptions="EndAndExpand"
+                  SelectedIndex="2" IsVisible="False"  SelectedIndexChanged="CategoryPicked"/>
+        </StackLayout>
+        <Button Text="Select Banner" FontSize="18" Clicked="OnImageSelect" BackgroundColor="Transparent"
+                TextColor="{StaticResource PrimaryTextColor}" BorderWidth="1" BorderColor="#F44336"/>
+        <StackLayout Orientation="Horizontal">
+          <Button Text="Cancel" FontSize="18" TextColor="{StaticResource PrimaryTextColor}" BorderWidth="1" BorderColor="#F44336"
+                  Clicked="OnCancel" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand"/>
+          <Button Text="Submit" FontSize="18" TextColor="{StaticResource PrimaryTextColor}" BorderWidth="1" BorderColor="#F44336"
+                  Clicked="OnSubmit" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</pages:PopupPage>
