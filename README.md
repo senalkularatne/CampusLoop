@@ -4,7 +4,7 @@
 
 ### CampusLoop UI
 
-![Campus Loop UI](https://user-images.githubusercontent.com/15186894/38536795-1253887e-3c59-11e8-8ebb-36ae0694fe47.png)
+![Campus Loop UI](https://user-images.githubusercontent.com/15186894/38536837-4f94be06-3c59-11e8-8bc3-990e449f894f.png)
 
 ### Technologies Used
 
